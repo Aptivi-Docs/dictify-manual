@@ -10,55 +10,59 @@ However, if it's the first time using the word, it attempts to serialize the res
 
 A `DictionaryWord` contains the following properties:
 
-* `string? Word`
+* `string Word`
   * The actual word
-* `string? PhoneticWord`
+* `string PhoneticWord`
   * The base phonetic representation of the word
-* `List<Phonetic>? Phonetics`
+* `List<Phonetic> Phonetics`
   * The alternative phonetic representations
-* `List<Meaning>? Meanings`
+* `List<Meaning> Meanings`
   * Word meanings
-* `License? LicenseInfo`
+* `License LicenseInfo`
   * License information
-* `List<string>? SourceUrls`
+* `List<string> SourceUrls`
   * List of where we got the word information from
 
 A `Phonetic` class contains the following properties:
 
-* `string? Text`
+* `string Text`
   * Phonetic representation of the word
-* `string? Audio`
+* `string Audio`
   * Link to the pronounciation, usually in MP3 format. Use [NAudio (Windows)](https://github.com/naudio/NAudio) to play it.
-* `string? SourceUrl`
+* `string SourceUrl`
   * From where did we get the audio from?
-* `License? License`
+* `License License`
   * License information for the source
 
 A `Meaning` class contains the following properties:
 
-* `string? PartOfSpeech`
+* `string PartOfSpeech`
   * Part of speech, usually noun, verb, adjective, adverb, interjection, etc.
-* `List<DefinitionType>? Definitions`
+* `List<DefinitionType> Definitions`
   * List of word definitions. Words usually come with one or more definitions.
-* `List<string>? Synonyms`
+* `List<string> Synonyms`
   * List of synonyms based on the word meaning
-* `List<string>? Antonyms`
+* `List<string> Antonyms`
   * List of antonyms based on the word meaning
 
 A `DefinitionType` class contains the following properties:
 
-* `string? Definition`
+* `string Definition`
   * Word definition
-* `List<string>? Synonyms`
+* `List<string> Synonyms`
   * List of synonyms based on the definition
-* `List<object>? Antonyms`
+* `List<object> Antonyms`
   * List of antonyms based on the definition
-* `string? Example`
+* `string Example`
   * Example in sentence
 
 A `License` class contains the following properties:
 
-* `string? Name`
+* `string Name`
   * License name
-* `string? Url`
+* `string Url`
   * License URL
+
+{% hint style="warning" %}
+You should be showing the license information somewhere in your program, usually in the About section, using the License class found within the dictionary word instance.
+{% endhint %}
